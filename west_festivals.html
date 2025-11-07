@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>West Indian Festivals</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: linear-gradient(to bottom, #ff9933, #ffffff, #138808);
+      color: #222;
+    }
+
+    nav {
+      width: 100%;
+      background: #0b3d02;
+      padding: 10px 0;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+    .navbar {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 30px;
+    }
+    .navbar a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem;
+      padding: 8px 16px;
+      border-radius: 6px;
+      transition: background 0.3s ease;
+    }
+    .navbar a:hover {
+      background: #ff6600;
+    }
+
+    header {
+      text-align: center;
+      padding: 40px 20px;
+      background: rgba(255,255,255,0.8);
+    }
+
+    header h1 {
+      color: #ff6600;
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      color: #333;
+      max-width: 800px;
+      margin: 0 auto;
+      line-height: 1.8;
+    }
+
+    .festival-section {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+      padding: 40px 20px;
+    }
+
+    .festival-card {
+      background: rgba(255,255,255,0.9);
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      padding: 20px;
+      text-align: center;
+      position: relative;
+      transition: transform 0.3s ease;
+    }
+
+    .festival-card:hover {
+      transform: scale(1.03);
+    }
+
+    .festival-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 15px;
+    }
+
+    .festival-card h3 {
+      color: #0b3d02;
+      margin-bottom: 10px;
+      font-size: 1.4rem;
+    }
+
+    .festival-card p {
+      color: #333;
+      font-size: 1rem;
+      line-height: 1.5;
+      margin-bottom: 35px;
+    }
+
+    .read-btn {
+      position: absolute;
+      bottom: 15px;
+      right: 15px;
+      background-color: #ff6600;
+      color: white;
+      border: none;
+      padding: 8px 14px;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .read-btn:hover {
+      background-color: #cc5200;
+    }
+
+    .listen-btn {
+      display: block;
+      margin: 20px auto;
+      background-color: #138808;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .listen-btn:hover {
+      background-color: #0a5a05;
+    }
+
+    footer {
+      background-color: rgba(0,0,0,0.85);
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+
+    @media (max-width: 480px) {
+      header h1 { font-size: 2rem; }
+      .festival-card img { height: 180px; }
+      .read-btn { bottom: 10px; right: 10px; padding: 6px 12px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="navbar">
+      <a href="west_india.html">🏠 Home</a>
+      <a href="west_cuisines.html">Cuisines</a>
+      <a href="west_festivals.html">Festivals</a>
+      <a href="west_tourism.html">Tourist Spots</a>
+    </div>
+  </nav>
+
+  <header>
+    <h1>Festivals of West India 🎉</h1>
+    <p id="aboutFestivals">
+      West India celebrates a rich cultural heritage through festivals that reflect local traditions, harvests, and devotion. From the vibrant Navratri garba dances in Gujarat to Maharashtra’s Ganesh Chaturthi, the region is alive with colors, music, and celebration.
+    </p>
+    <button class="listen-btn" onclick="readFestivals()">🔊 Listen About Festivals</button>
+  </header>
+
+  <section class="festival-section">
+
+    <div class="festival-card">
+      <img src="ganesh_chaturthi.jpeg" alt="Ganesh Chaturthi">
+      <h3>Ganesh Chaturthi</h3>
+      <p>Maharashtra’s grand festival honoring Lord Ganesha, featuring large clay idols, processions, and community celebrations.</p>
+      <button class="read-btn" onclick="alert('Ganesh Chaturthi is celebrated in Maharashtra, especially Mumbai and Pune. People install Ganesha idols at home and in public pandals, perform prayers, and immerse the idols in water after 10 days.')">Read More</button>
+    </div>
+
+    <div class="festival-card">
+      <img src="navratri.jpg" alt="Navratri">
+      <h3>Navratri</h3>
+      <p>Gujarat’s nine-day festival of dance, music, and devotion to Goddess Durga, famous for colorful Garba and Dandiya performances.</p>
+      <button class="read-btn" onclick="alert('Navratri is celebrated for nine nights in Gujarat with Garba and Dandiya dances. Devotees worship Goddess Durga, wear traditional attire, and celebrate community spirit.')">Read More</button>
+    </div>
+
+    <div class="festival-card">
+      <img src="diwali_west.jpeg" alt="Diwali">
+      <h3>Diwali</h3>
+      <p>The festival of lights celebrated across West India, marked by lamps, fireworks, sweets, and prayers for prosperity.</p>
+      <button class="read-btn" onclick="alert('Diwali is celebrated in Gujarat, Maharashtra, Rajasthan, and Goa with lighting lamps, bursting firecrackers, exchanging sweets, and performing Lakshmi Puja for wealth and prosperity.')">Read More</button>
+    </div>
+
+    <div class="festival-card">
+      <img src="makar_sankranti.jpeg" alt="Makar Sankranti">
+      <h3>Makar Sankranti</h3>
+      <p>A harvest festival in Maharashtra, Gujarat, and Rajasthan, celebrated with kite flying, tilgul sweets, and prayers to the Sun God.</p>
+      <button class="read-btn" onclick="alert('Makar Sankranti marks the sun’s transition into Capricorn. People fly kites, exchange sesame sweets called tilgul in Maharashtra, and offer prayers for a good harvest.')">Read More</button>
+    </div>
+
+    <div class="festival-card">
+      <img src="goa_carnival.jpeg" alt="Goa Carnival">
+      <h3>Goa Carnival</h3>
+      <p>A colorful festival in Goa with parades, floats, dances, and music, celebrating the pre-Lenten season.</p>
+      <button class="read-btn" onclick="alert('The Goa Carnival is celebrated with grand parades, floats, costumes, and music before Lent. It was introduced by the Portuguese and is a major tourist attraction.')">Read More</button>
+    </div>
+
+    <div class="festival-card">
+      <img src="desert_festival.jpeg" alt="Desert Festival">
+      <h3>Desert Festival</h3>
+      <p>Rajasthan’s annual cultural festival in Jaisalmer, showcasing folk music, dance, camel races, and traditional arts.</p>
+      <button class="read-btn" onclick="alert('The Desert Festival of Jaisalmer is a three-day festival featuring folk performances, camel races, turban tying competitions, and crafts exhibitions, reflecting Rajasthani culture.')">Read More</button>
+    </div>
+
+  </section>
+
+  <footer>
+    &copy; 2025 Discover West India | All Rights Reserved
+  </footer>
+
+  <script>
+    function readFestivals() {
+      const text = document.getElementById('aboutFestivals').textContent;
+      const speech = new SpeechSynthesisUtterance(text);
+      speech.lang = 'en-IN';
+      speech.rate = 1;
+      speech.pitch = 1;
+      speechSynthesis.cancel();
+      speechSynthesis.speak(speech);
+    }
+  </script>
+
+</body>
+</html>

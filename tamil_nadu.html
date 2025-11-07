@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tamil Nadu - Land of Temples & Tradition</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: linear-gradient(to bottom, #ff9933, #ffffff, #138808);
+      color: #222;
+    }
+
+    /* Navbar */
+    nav {
+      width: 100%;
+      background: #0b3d02;
+      padding: 10px 0;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 30px;
+    }
+
+    .navbar a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem;
+      padding: 8px 16px;
+      border-radius: 6px;
+      transition: background 0.3s ease;
+    }
+
+    .navbar a:hover {
+      background: #ff6600;
+    }
+
+    header {
+      text-align: center;
+      padding: 40px 20px;
+      background: rgba(255,255,255,0.85);
+    }
+
+    header h1 {
+      color: #ff6600;
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      color: #333;
+      max-width: 800px;
+      margin: 0 auto;
+      line-height: 1.8;
+    }
+
+    .section {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+      padding: 40px 20px;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.9);
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      padding: 20px;
+      text-align: center;
+      transition: transform 0.3s ease;
+      position: relative;
+    }
+
+    .card:hover {
+      transform: scale(1.03);
+    }
+
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 15px;
+    }
+
+    .card h3 {
+      color: #0b3d02;
+      margin-bottom: 10px;
+      font-size: 1.4rem;
+    }
+
+    .card p {
+      color: #333;
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    .read-btn {
+      position: absolute;
+      bottom: 15px;
+      right: 15px;
+      background-color: #138808;
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .read-btn:hover {
+      background-color: #0a5a05;
+    }
+
+    .listen-btn {
+      display: block;
+      margin: 20px auto;
+      background-color: #138808;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .listen-btn:hover {
+      background-color: #0a5a05;
+    }
+
+    footer {
+      background-color: rgba(0,0,0,0.85);
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+
+    @media (max-width: 480px) {
+      header h1 { font-size: 2rem; }
+      .card img { height: 180px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <div class="navbar">
+      <a href="south_india.html">🏠 Home</a>
+      <a href="south_cuisines.html">Cuisines</a>
+      <a href="south_festivals.html">Festivals</a>
+      <a href="tamil_nadu.html">Tamil Nadu</a>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <header>
+    <h1>Tamil Nadu – Land of Temples & Tradition 🛕</h1>
+    <p id="aboutTN">
+      Tamil Nadu is a land rich in ancient temples, classical dance, and diverse landscapes. From the majestic temples of Madurai to the breezy shores of Marina Beach, this state is a perfect blend of spirituality, heritage, and natural beauty.
+    </p>
+    <button class="listen-btn" onclick="readTN()">🔊 Listen About Tamil Nadu</button>
+  </header>
+
+  <!-- Attractions Section -->
+  <section class="section">
+    <div class="card">
+      <img src="meenakshi_temple.webp" alt="Meenakshi Temple">
+      <h3>Meenakshi Temple, Madurai</h3>
+      <p>A masterpiece of Dravidian architecture, this temple dedicated to Goddess Meenakshi is an architectural wonder and a symbol of Tamil heritage.</p>
+      <button class="read-btn">Read More</button>
+    </div>
+
+    <div class="card">
+      <img src="mahabalipuram.jpeg" alt="Mahabalipuram">
+      <h3>Mahabalipuram</h3>
+      <p>A UNESCO World Heritage site known for its rock-cut temples and sculptures that narrate stories from Indian epics.</p>
+      <button class="read-btn">Read More</button>
+    </div>
+
+    <div class="card">
+      <img src="marina_beach.jpeg" alt="Marina Beach">
+      <h3>Marina Beach, Chennai</h3>
+      <p>One of the longest urban beaches in the world, Marina Beach offers mesmerizing sunsets and a lively atmosphere.</p>
+      <button class="read-btn">Read More</button>
+    </div>
+
+    <div class="card">
+      <img src="ooty.jpeg" alt="Ooty">
+      <h3>Ooty</h3>
+      <p>Popularly known as the “Queen of Hills”, Ooty is famous for its cool climate, tea gardens, and scenic views of the Nilgiris.</p>
+      <button class="read-btn">Read More</button>
+    </div>
+
+    <div class="card">
+      <img src="bharatanatyam.webp" alt="Bharatanatyam">
+      <h3>Bharatanatyam</h3>
+      <p>One of India’s oldest classical dance forms, Bharatanatyam originated in Tamil Nadu and embodies grace, rhythm, and devotion.</p>
+      <button class="read-btn">Read More</button>
+    </div>
+
+    <div class="card">
+      <img src="chettinad_food.jpeg" alt="Chettinad Cuisine">
+      <h3>Chettinad Cuisine</h3>
+      <p>Known for its bold spices and rich flavors, Chettinad cuisine showcases the culinary brilliance of Tamil Nadu.</p>
+      <button class="read-btn">Read More</button>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 Discover South India | Designed with ❤️ by Chintan
+  </footer>
+
+  <script>
+    // Text-to-speech
+    function readTN() {
+      const text = document.getElementById('aboutTN').textContent;
+      const speech = new SpeechSynthesisUtterance(text);
+      speech.lang = 'en-IN';
+      speech.rate = 1;
+      speech.pitch = 1;
+      speechSynthesis.cancel();
+      speechSynthesis.speak(speech);
+    }
+  </script>
+
+</body>
+</html>

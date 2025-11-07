@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>West Bengal – Land of Culture & Heritage</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: linear-gradient(to bottom, #ff9933, #ffffff, #138808);
+      color: #222;
+    }
+
+    /* Navbar */
+    nav {
+      width: 100%;
+      background: #0b3d02;
+      padding: 10px 0;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 30px;
+    }
+
+    .navbar a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem;
+      padding: 8px 16px;
+      border-radius: 6px;
+      transition: background 0.3s ease;
+    }
+
+    .navbar a:hover {
+      background: #ff6600;
+    }
+
+    header {
+      text-align: center;
+      padding: 40px 20px;
+      background: rgba(255,255,255,0.85);
+    }
+
+    header h1 {
+      color: #ff6600;
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      color: #333;
+      max-width: 800px;
+      margin: 0 auto;
+      line-height: 1.8;
+    }
+
+    .section {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+      padding: 40px 20px;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.9);
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      padding: 20px;
+      text-align: center;
+      transition: transform 0.3s ease;
+      position: relative;
+    }
+
+    .card:hover {
+      transform: scale(1.03);
+    }
+
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 15px;
+    }
+
+    .card h3 {
+      color: #0b3d02;
+      margin-bottom: 10px;
+      font-size: 1.4rem;
+    }
+
+    .card p {
+      color: #333;
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    .read-btn {
+      position: absolute;
+      bottom: 15px;
+      right: 15px;
+      background-color: #138808;
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .read-btn:hover {
+      background-color: #0a5a05;
+    }
+
+    .listen-btn {
+      display: block;
+      margin: 20px auto;
+      background-color: #138808;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .listen-btn:hover {
+      background-color: #0a5a05;
+    }
+
+    footer {
+      background-color: rgba(0,0,0,0.85);
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+
+    @media (max-width: 480px) {
+      header h1 { font-size: 2rem; }
+      .card img { height: 180px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <div class="navbar">
+      <a href="east.html">🏠 Home</a>
+      <a href="east_cuisines.html">Cuisines</a>
+      <a href="east_festivals.html">Festivals</a>
+      <a href="west_bengal.html">West Bengal</a>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <header>
+    <h1>West Bengal – Land of Culture & Heritage 🌅</h1>
+    <p id="aboutWB">
+      West Bengal is famous for its rich culture, literature, arts, and natural beauty. From the bustling streets of Kolkata to the serene landscapes of Darjeeling, the state offers a perfect blend of tradition, festivals, and scenic charm.
+    </p>
+    <button class="listen-btn" onclick="readWB()">🔊 Listen About West Bengal</button>
+  </header>
+
+  <!-- Attractions Section -->
+  <section class="section">
+    <div class="card">
+      <img src="victoria_memorial.jpeg" alt="Victoria Memorial">
+      <h3>Victoria Memorial, Kolkata</h3>
+      <p>A grand white marble monument dedicated to Queen Victoria, showcasing colonial architecture and housing a museum of Bengal’s history.</p>
+      <button class="read-btn">Read More</button>
+    </div>
+
+    <div class="card">
+      <img src="howrah_bridge.jpeg" alt="Howrah Bridge">
+      <h3>Howrah Bridge, Kolkata</h3>
+      <p>An iconic cantilever bridge over the Hooghly River, symbolizing Kolkata’s vibrancy and engineering marvels.</p>
+      <button class="read-btn">Read More</button>
+    </div>
+
+    <div class="card">
+      <img src="darjeeling.jpeg" alt="Darjeeling">
+      <h3>Darjeeling</h3>
+      <p>Famous for its tea gardens, Himalayan views, and the historic Darjeeling Himalayan Railway, a UNESCO World Heritage Site.</p>
+      <button class="read-btn">Read More</button>
+    </div>
+
+    <div class="card">
+      <img src="sundarbans.jpeg" alt="Sundarbans">
+      <h3>Sundarbans</h3>
+      <p>The largest mangrove forest in the world, home to the Royal Bengal Tiger and a UNESCO World Heritage Site.</p>
+      <button class="read-btn">Read More</button>
+    </div>
+
+    <div class="card">
+      <img src="durga_puja.webp" alt="Durga Puja">
+      <h3>Durga Puja</h3>
+      <p>The most celebrated festival of West Bengal, marked by elaborate pandals, cultural performances, and traditional Bengali cuisine.</p>
+      <button class="read-btn">Read More</button>
+    </div>
+
+    <div class="card">
+      <img src="rosogolla.jpeg" alt="Rasgulla">
+      <h3>Bengali Cuisine</h3>
+      <p>Known for its sweets like Rasgulla and Sandesh, fish delicacies, and flavorful rice-based dishes reflecting the culinary heritage of Bengal.</p>
+      <button class="read-btn">Read More</button>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 Discover East India | Designed with ❤️ by Chintan
+  </footer>
+
+  <script>
+    // Text-to-speech
+    function readWB() {
+      const text = document.getElementById('aboutWB').textContent;
+      const speech = new SpeechSynthesisUtterance(text);
+      speech.lang = 'en-IN';
+      speech.rate = 1;
+      speech.pitch = 1;
+      speechSynthesis.cancel();
+      speechSynthesis.speak(speech);
+    }
+  </script>
+
+</body>
+</html>

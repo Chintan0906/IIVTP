@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Us - Incredible India Virtual Tour</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: #222;
+      background: linear-gradient(-45deg, #ff9933, #ffffff, #138808, #ff6600);
+      background-size: 400% 400%;
+      animation: gradientMove 15s ease infinite;
+      overflow-x: hidden;
+    }
+
+    @keyframes gradientMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* === Navbar === */
+    nav {
+      background: rgba(255, 153, 51, 0.9);
+      padding: 14px 0;
+      text-align: center;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(8px);
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      flex-wrap: wrap;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #fff;
+      font-weight: 600;
+      font-size: 1.1rem;
+      padding: 8px 16px;
+      border-radius: 6px;
+      transition: background 0.3s ease, color 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      background: rgba(0,0,0,0.7);
+      color: #fff;
+    }
+
+    /* === Contact Section === */
+    .container {
+      max-width: 1000px;
+      margin: 70px auto;
+      background: rgba(255,255,255,0.9);
+      padding: 40px 30px;
+      border-radius: 16px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .contact-info {
+      flex: 1;
+      min-width: 300px;
+    }
+
+    h1 {
+      color: #ff6600;
+      margin-bottom: 15px;
+      font-size: 2.2rem;
+      text-shadow: #ff9933 1px 1px 3px;
+    }
+
+    p {
+      color: #333;
+      margin-bottom: 20px;
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+    .info-item {
+      margin-bottom: 18px;
+      font-size: 1rem;
+    }
+
+    .info-item strong {
+      color: #138808;
+    }
+
+    /* === Contact Form === */
+    form {
+      flex: 1;
+      min-width: 300px;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    input, textarea {
+      padding: 12px;
+      border: 2px solid #ccc;
+      border-radius: 8px;
+      font-size: 1rem;
+      outline: none;
+      transition: border 0.3s ease;
+    }
+
+    input:focus, textarea:focus {
+      border-color: #138808;
+    }
+
+    textarea {
+      resize: none;
+      min-height: 100px;
+    }
+
+    button {
+      background-color: #138808;
+      color: white;
+      border: none;
+      padding: 14px;
+      font-size: 1.1rem;
+      font-weight: bold;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #0a5a05;
+      transform: scale(1.05);
+    }
+
+    /* === Map Section === */
+    .map {
+      width: 100%;
+      height: 350px;
+      border-radius: 16px;
+      margin-top: 50px;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    }
+
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    /* === Footer === */
+    footer {
+      text-align: center;
+      color: white;
+      background-color: rgba(0,0,0,0.8);
+      padding: 20px;
+      margin-top: 40px;
+    }
+
+    /* === Responsive === */
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+        text-align: center;
+      }
+      h1 { font-size: 1.8rem; }
+      p { font-size: 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="north_india.html">North India</a></li>
+      <li><a href="south_india.html">South India</a></li>
+      <li><a href="east_india.html">East India</a></li>
+      <li><a href="west_india.html">West India</a></li>
+      <li><a href="feedback.html">Feedback</a></li>
+    </ul>
+  </nav>
+
+  <!-- Contact Section -->
+  <div class="container">
+    <div class="contact-info">
+      <h1>Contact Us 📞</h1>
+      <p>We’d love to hear from you! Whether you have questions, suggestions, or collaboration ideas — feel free to reach out.</p>
+
+      <div class="info-item"><strong>📍 Address:</strong> SKIT College, Jaipur, Rajasthan, India</div>
+      <div class="info-item"><strong>📧 Email:</strong> jainchintan0906@gmail.com</div>
+      <div class="info-item"><strong>📞 Phone:</strong> +91 63756 82041</div>
+    </div>
+
+    <form onsubmit="return sendMessage()">
+      <input type="text" id="name" placeholder="Your Name" required>
+      <input type="email" id="email" placeholder="Your Email" required>
+      <input type="text" id="subject" placeholder="Subject" required>
+      <textarea id="message" placeholder="Your Message..." required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </div>
+
+  <!-- Map -->
+  <div class="map">
+    <iframe 
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3562.377257704134!2d75.81854957456586!3d26.764586376758327!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396db53a2ad1c44b%3A0x6a16da77e16c2dc!2sSKIT%20Jaipur!5e0!3m2!1sen!2sin!4v1718533349999!5m2!1sen!2sin" 
+      allowfullscreen="" 
+      loading="lazy">
+    </iframe>
+  </div>
+
+  <footer>
+    &copy; 2025 Incredible India Virtual Tour. All Rights Reserved.
+  </footer>
+
+  <script>
+    function sendMessage() {
+      const name = document.getElementById('name').value;
+      if (name) {
+        alert("📨 Thank you, " + name + "! Your message has been sent successfully.");
+      }
+      return false; // prevent page reload
+    }
+  </script>
+
+</body>
+</html>

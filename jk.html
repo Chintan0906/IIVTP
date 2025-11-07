@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jammu & Kashmir - Heaven on Earth</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: linear-gradient(to bottom, #ff9933, #ffffff, #138808);
+      color: #222;
+    }
+
+    /* Navbar */
+    nav {
+      width: 100%;
+      background: #0b3d02;
+      padding: 10px 0;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 30px;
+    }
+
+    .navbar a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem;
+      padding: 8px 16px;
+      border-radius: 6px;
+      transition: background 0.3s ease;
+    }
+
+    .navbar a:hover {
+      background: #ff6600;
+    }
+
+    header {
+      text-align: center;
+      padding: 40px 20px;
+      background: rgba(255,255,255,0.85);
+    }
+
+    header h1 {
+      color: #ff6600;
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      color: #333;
+      max-width: 800px;
+      margin: 0 auto;
+      line-height: 1.8;
+    }
+
+    .section {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+      padding: 40px 20px;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.9);
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      padding: 20px;
+      text-align: center;
+      transition: transform 0.3s ease;
+      position: relative;
+    }
+
+    .card:hover {
+      transform: scale(1.03);
+    }
+
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 15px;
+    }
+
+    .card h3 {
+      color: #0b3d02;
+      margin-bottom: 10px;
+      font-size: 1.4rem;
+    }
+
+    .card p {
+      color: #333;
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    .read-btn {
+      position: absolute;
+      bottom: 15px;
+      right: 15px;
+      background-color: #138808;
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .read-btn:hover {
+      background-color: #0a5a05;
+    }
+
+    .listen-btn {
+      display: block;
+      margin: 20px auto;
+      background-color: #138808;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .listen-btn:hover {
+      background-color: #0a5a05;
+    }
+
+    footer {
+      background-color: rgba(0,0,0,0.85);
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+
+    @media (max-width: 480px) {
+      header h1 { font-size: 2rem; }
+      .card img { height: 180px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <div class="navbar">
+      <a href="north_india.html">🏠 Home</a>
+      <a href="north_cuisines.html">Cuisines</a>
+      <a href="north_festivals.html">Festivals</a>
+      <a href="jk.html">Jammu & Kashmir</a>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <header>
+    <h1>Jammu & Kashmir - The Crown of India 🏔️</h1>
+    <p id="aboutJK">
+      Jammu & Kashmir, often called “Heaven on Earth”, is blessed with snow-capped mountains, serene valleys, vibrant culture, and warm hospitality. From Kashmiri Kahwa to Shikara rides on Dal Lake — every moment here is pure bliss.
+    </p>
+    <button class="listen-btn" onclick="readJK()">🔊 Listen About Jammu & Kashmir</button>
+  </header>
+
+  <!-- Attractions -->
+  <section class="section">
+    <div class="card">
+      <img src="dal_lake.jpg" alt="Dal Lake">
+      <h3>Dal Lake</h3>
+      <p>The heart of Srinagar — famous for its Shikara rides, floating gardens, and houseboats that offer a glimpse of paradise.</p>
+      <button class="read-btn">Read More</button>
+    </div>
+
+    <div class="card">
+      <img src="gulmarg.jpg" alt="Gulmarg">
+      <h3>Gulmarg</h3>
+      <p>A world-class skiing destination surrounded by pine forests and breathtaking Himalayan peaks.</p>
+      <button class="read-btn">Read More</button>
+    </div>
+
+    <div class="card">
+      <img src="vaishno_devi.jpg" alt="Vaishno Devi Temple">
+      <h3>Vaishno Devi Temple</h3>
+      <p>One of India’s holiest shrines, attracting millions of pilgrims seeking blessings from Goddess Vaishno Devi.</p>
+      <button class="read-btn">Read More</button>
+    </div>
+
+    <div class="card">
+      <img src="pahalgam.jpg" alt="Pahalgam">
+      <h3>Pahalgam</h3>
+      <p>Known as the 'Valley of Shepherds', Pahalgam offers pristine landscapes and is a base for the Amarnath Yatra.</p>
+      <button class="read-btn">Read More</button>
+    </div>
+
+    <div class="card">
+      <img src="kahwa.jpg" alt="Kashmiri Kahwa">
+      <h3>Kashmiri Kahwa</h3>
+      <p>A traditional green tea infused with saffron, almonds, and spices — a drink that defines Kashmiri warmth and culture.</p>
+      <button class="read-btn">Read More</button>
+    </div>
+
+    <div class="card">
+      <img src="tulip_garden.jpg" alt="Tulip Garden">
+      <h3>Indira Gandhi Tulip Garden</h3>
+      <p>Asia’s largest tulip garden, blooming with vibrant colors every spring — a sight that leaves every visitor spellbound.</p>
+      <button class="read-btn">Read More</button>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 Discover North India | Designed with ❤️ by Chintan
+  </footer>
+
+  <script>
+    // Text-to-speech
+    function readJK() {
+      const text = document.getElementById('aboutJK').textContent;
+      const speech = new SpeechSynthesisUtterance(text);
+      speech.lang = 'en-IN';
+      speech.rate = 1;
+      speech.pitch = 1;
+      speechSynthesis.cancel();
+      speechSynthesis.speak(speech);
+    }
+  </script>
+
+</body>
+</html>

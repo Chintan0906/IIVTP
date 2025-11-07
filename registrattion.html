@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Register | Incredible India Virtual Tour</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(-45deg, #ff9933, #ffffff, #138808, #ff6600);
+      background-size: 400% 400%;
+      animation: moveBg 10s ease infinite;
+      overflow: hidden;
+    }
+
+    @keyframes moveBg {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .register-container {
+      width: 420px;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 16px;
+      backdrop-filter: blur(12px);
+      box-shadow: 0 4px 30px rgba(0,0,0,0.3);
+      padding: 40px;
+      text-align: center;
+      color: #fff;
+      animation: fadeIn 1s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .register-container h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: #fff;
+      text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+    }
+
+    .input-box {
+      position: relative;
+      margin: 18px 0;
+    }
+
+    .input-box input {
+      width: 100%;
+      padding: 12px 40px 12px 15px;
+      border: none;
+      border-radius: 8px;
+      outline: none;
+      background: rgba(255,255,255,0.8);
+      font-size: 1rem;
+      color: #000;
+      transition: 0.3s ease;
+    }
+
+    .input-box input:focus {
+      background: #fff;
+      box-shadow: 0 0 8px rgba(0,0,0,0.2);
+    }
+
+    .input-box i {
+      position: absolute;
+      right: 15px;
+      top: 12px;
+      color: #333;
+      font-size: 1.1rem;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background: #138808;
+      border: none;
+      border-radius: 8px;
+      color: white;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.3s;
+      margin-top: 10px;
+    }
+
+    button:hover {
+      background: #0a5a05;
+      transform: scale(1.02);
+    }
+
+    .bottom-text {
+      margin-top: 18px;
+      font-size: 0.95rem;
+    }
+
+    .bottom-text a {
+      color: #fff;
+      font-weight: 600;
+      text-decoration: underline;
+      transition: color 0.3s;
+    }
+
+    .bottom-text a:hover {
+      color: #000;
+    }
+
+    .error-msg, .success-msg {
+      margin-top: 10px;
+      font-size: 0.9rem;
+      display: none;
+    }
+
+    .error-msg { color: #ff3333; }
+    .success-msg { color: #00ff99; }
+
+    @media (max-width: 450px) {
+      .register-container {
+        width: 90%;
+        padding: 25px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="register-container">
+    <h2>Create an Account 🧭</h2>
+    <form id="registerForm">
+      <div class="input-box">
+        <input type="text" id="name" placeholder="Full Name" required>
+        <i class="fa fa-user"></i>
+      </div>
+
+      <div class="input-box">
+        <input type="email" id="email" placeholder="Email Address" required>
+        <i class="fa fa-envelope"></i>
+      </div>
+
+      <div class="input-box">
+        <input type="text" id="username" placeholder="Username" required>
+        <i class="fa fa-id-badge"></i>
+      </div>
+
+      <div class="input-box">
+        <input type="password" id="password" placeholder="Password" required>
+        <i class="fa fa-lock"></i>
+      </div>
+
+      <div class="input-box">
+        <input type="password" id="confirmPassword" placeholder="Confirm Password" required>
+        <i class="fa fa-lock"></i>
+      </div>
+
+      <button type="submit">Register</button>
+      <p class="error-msg" id="errorMsg"></p>
+      <p class="success-msg" id="successMsg"></p>
+
+      <div class="bottom-text">
+        <p>Already have an account? <a href="login.html">Login</a></p>
+      </div>
+    </form>
+  </div>
+
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <script>
+    const form = document.getElementById("registerForm");
+    const errorMsg = document.getElementById("errorMsg");
+    const successMsg = document.getElementById("successMsg");
+
+    form.addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const username = document.getElementById("username").value.trim();
+      const password = document.getElementById("password").value.trim();
+      const confirmPassword = document.getElementById("confirmPassword").value.trim();
+
+      errorMsg.style.display = "none";
+      successMsg.style.display = "none";
+
+      if (!name || !email || !username || !password || !confirmPassword) {
+        errorMsg.textContent = "⚠️ All fields are required!";
+        errorMsg.style.display = "block";
+        return;
+      }
+
+      if (password.length < 6) {
+        errorMsg.textContent = "⚠️ Password must be at least 6 characters!";
+        errorMsg.style.display = "block";
+        return;
+      }
+
+      if (password !== confirmPassword) {
+        errorMsg.textContent = "⚠️ Passwords do not match!";
+        errorMsg.style.display = "block";
+        return;
+      }
+
+      // Save user data in localStorage
+      const users = JSON.parse(localStorage.getItem("users")) || [];
+      const existingUser = users.find(user => user.username === username || user.email === email);
+      if (existingUser) {
+        errorMsg.textContent = "⚠️ Username or Email already exists!";
+        errorMsg.style.display = "block";
+        return;
+      }
+
+      users.push({ name, email, username, password });
+      localStorage.setItem("users", JSON.stringify(users));
+
+      successMsg.textContent = "✅ Registration successful! Redirecting to login...";
+      successMsg.style.display = "block";
+
+      setTimeout(() => {
+        window.location.href = "login.html";
+      }, 1800);
+    });
+  </script>
+
+</body>
+</html>

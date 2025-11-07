@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Incredible India Virtual Tour</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* === Live Background Animation === */
+    body {
+      font-family: 'Montserrat', sans-serif;
+      color: #222;
+      background: linear-gradient(-45deg, #ff9933, #ffffff, #138808, #ff6600);
+      background-size: 400% 400%;
+      animation: gradientMove 15s ease infinite;
+      overflow-x: hidden;
+    }
+
+    @keyframes gradientMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* === Navbar === */
+    nav {
+      background: rgba(255, 153, 51, 0.9);
+      padding: 14px 0;
+      text-align: center;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(8px);
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      flex-wrap: wrap;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #fff;
+      font-weight: 600;
+      font-size: 1.1rem;
+      padding: 8px 16px;
+      border-radius: 6px;
+      transition: background 0.3s ease, color 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      background: rgba(0,0,0,0.7);
+      color: #fff;
+    }
+
+    /* === Header === */
+    header {
+      padding: 60px 20px 40px;
+      text-align: center;
+      background: rgba(255, 255, 255, 0.9);
+      color: #000;
+      border-radius: 0 0 40px 40px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+      margin-bottom: 30px;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+      color: #ff6600;
+      text-shadow: #ff9933 2px 2px 4px;
+    }
+
+    h2 {
+      margin-top: 40px;
+      font-size: 2rem;
+      color: #0b3d02;
+    }
+
+    p {
+      max-width: 900px;
+      margin: 20px auto;
+      font-size: 1.2rem;
+      line-height: 1.8;
+      color: #333;
+    }
+
+    .content {
+      padding: 30px 20px;
+      text-align: center;
+    }
+
+    /* === Slideshow === */
+    .slideshow-container {
+      position: relative;
+      max-width: 900px;
+      height: 500px;
+      margin: 40px auto;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+    }
+
+    .slide {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      transition: opacity 1.5s ease-in-out;
+    }
+
+    .slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .slide.active {
+      opacity: 1;
+      z-index: 1;
+    }
+
+    .caption-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, 0.4);
+      color: #fff;
+      font-size: 1.8rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
+      text-align: center;
+      padding: 0 20px;
+    }
+
+    .slide:hover .caption-overlay {
+      opacity: 1;
+    }
+
+    /* Navigation buttons */
+    .prev, .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      padding: 12px;
+      color: white;
+      font-weight: bold;
+      font-size: 22px;
+      background: rgba(0,0,0,0.5);
+      border-radius: 50%;
+      user-select: none;
+      transition: background 0.3s;
+      z-index: 2;
+    }
+
+    .prev:hover, .next:hover {
+      background: rgba(0,0,0,0.8);
+    }
+
+    .prev { left: 15px; }
+    .next { right: 15px; }
+
+    /* Dots */
+    .dots {
+      text-align: center;
+      margin-top: 12px;
+    }
+
+    .dot {
+      height: 12px;
+      width: 12px;
+      margin: 0 4px;
+      background-color: #bbb;
+      border-radius: 50%;
+      display: inline-block;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .dot.active {
+      background-color: #333;
+    }
+
+    /* === Buttons === */
+    button {
+      padding: 14px 24px;
+      font-size: 1rem;
+      margin-top: 10px;
+      border: none;
+      border-radius: 8px;
+      background-color: #138808;
+      color: white;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #0a5a05;
+    }
+
+    /* === Footer === */
+    footer {
+      background-color: rgba(0, 0, 0, 0.8);
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 50px;
+    }
+
+    /* === Responsive Design === */
+    @media (max-width: 768px) {
+      h1 { font-size: 2.2rem; }
+      h2 { font-size: 1.6rem; }
+      p { font-size: 1rem; }
+      .slideshow-container {
+        max-width: 95%;
+        height: 300px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      nav ul {
+        flex-direction: column;
+        gap: 10px;
+      }
+      nav ul li { padding: 8px 0; }
+      header h1 { font-size: 1.8rem; }
+      header h2 { font-size: 1.2rem; }
+      .prev, .next {
+        font-size: 18px;
+        padding: 8px;
+      }
+      .caption-overlay {
+        font-size: 1rem;
+        padding: 0 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <ul>
+      <li><a href="north_india.html">North India</a></li>
+      <li><a href="south_india.html">South India</a></li>
+      <li><a href="east_india.html">East India</a></li>
+      <li><a href="west_india.html">West India</a></li>
+      <li><a href="feedback.html">Feedback</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+    </ul>
+  </nav>
+
+  <!-- Header -->
+  <header>
+    <h1>Incredible India Virtual Tour</h1>
+    <h2>About India</h2>
+    <p id="aboutText">
+      India is a land of rich culture, ancient history, and incredible diversity. Known for its unity in diversity,
+      India is home to numerous languages, religions, festivals, art forms, and traditions.
+      From the snow-capped Himalayas in the north to the serene beaches in the south, India offers a unique blend of
+      natural beauty and cultural heritage. Every state has its own story, making India a vibrant and colorful nation worth exploring.
+    </p>
+    <button onclick="readAboutIndia()">🔊 Listen About India</button>
+  </header>
+
+  <!-- Content -->
+  <div class="content">
+    <h2>🌍 Explore India</h2>
+
+    <!-- Slideshow -->
+    <div class="slideshow-container" id="slideshow">
+      <div class="slide active"><img src="ind1.webp" alt="Taj Hotel"><div class="caption-overlay">Taj Hotel</div></div>
+      <div class="slide"><img src="ind2.jpg" alt="Taj Mahal"><div class="caption-overlay">Taj Mahal</div></div>
+      <div class="slide"><img src="su.webp" alt="Statue Of Unity"><div class="caption-overlay">Statue Of Unity</div></div>
+      <div class="slide"><img src="lt.jpg" alt="Lotus Temple"><div class="caption-overlay">Lotus Temple</div></div>
+      <div class="slide"><img src="char.jpeg" alt="Charminar"><div class="caption-overlay">Charminar</div></div>
+      <div class="slide"><img src="ind6.avif" alt="Red Fort"><div class="caption-overlay">Red Fort</div></div>
+      <div class="slide"><img src="ind8.jpg" alt="India Gate"><div class="caption-overlay">India Gate</div></div>
+      <div class="slide"><img src="hwm.jpeg" alt="Hawa Mahal"><div class="caption-overlay">Hawa Mahal</div></div>
+      <div class="slide"><img src="gd.jpeg" alt="Golden Temple"><div class="caption-overlay">Golden Temple</div></div>
+      <div class="slide"><img src="ind10.jpg" alt="Qutub Minar"><div class="caption-overlay">Qutub Minar</div></div>
+
+      <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+      <a class="next" onclick="changeSlide(1)">&#10095;</a>
+    </div>
+
+    <div class="dots"></div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2025 Incredible India Virtual Tour. All Rights Reserved.
+  </footer>
+
+  <script>
+    // Text-to-Speech
+    function readAboutIndia() {
+      const text = document.getElementById('aboutText').textContent;
+      const speech = new SpeechSynthesisUtterance(text);
+      speech.lang = 'en-IN';
+      speech.rate = 1;
+      speech.pitch = 1;
+      speechSynthesis.cancel();
+      speechSynthesis.speak(speech);
+    }
+
+    // Slideshow Logic
+    let slideIndex = 0;
+    const slides = document.querySelectorAll(".slide");
+    const dotsContainer = document.querySelector(".dots");
+    const slideshow = document.getElementById("slideshow");
+
+    slides.forEach((_, i) => {
+      const dot = document.createElement("span");
+      dot.classList.add("dot");
+      dot.addEventListener("click", () => showSlide(i));
+      dotsContainer.appendChild(dot);
+    });
+
+    const dots = document.querySelectorAll(".dot");
+
+    function showSlide(n) {
+      slides.forEach((slide, i) => {
+        slide.classList.toggle("active", i === n);
+        dots[i].classList.toggle("active", i === n);
+      });
+      slideIndex = n;
+    }
+
+    function changeSlide(step) {
+      slideIndex = (slideIndex + step + slides.length) % slides.length;
+      showSlide(slideIndex);
+    }
+
+    let autoSlide = setInterval(() => changeSlide(1), 4000);
+    slideshow.addEventListener("mouseenter", () => clearInterval(autoSlide));
+    slideshow.addEventListener("mouseleave", () => autoSlide = setInterval(() => changeSlide(1), 4000));
+
+    // Swipe gestures for mobile
+    let startX = 0;
+    slideshow.addEventListener("touchstart", e => startX = e.touches[0].clientX);
+    slideshow.addEventListener("touchend", e => {
+      const endX = e.changedTouches[0].clientX;
+      if (startX - endX > 50) changeSlide(1);
+      if (endX - startX > 50) changeSlide(-1);
+    });
+
+    showSlide(0);
+  </script>
+</body>
+</html>

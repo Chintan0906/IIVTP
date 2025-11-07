@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>East Indian Festivals</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: linear-gradient(to bottom, #ff9933, #ffffff, #138808);
+      color: #222;
+    }
+
+    /* Navbar */
+    nav {
+      width: 100%;
+      background: #0b3d02;
+      padding: 10px 0;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+    .navbar {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 30px;
+    }
+    .navbar a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem;
+      padding: 8px 16px;
+      border-radius: 6px;
+      transition: background 0.3s ease;
+    }
+    .navbar a:hover {
+      background: #ff6600;
+    }
+
+    header {
+      text-align: center;
+      padding: 40px 20px;
+      background: rgba(255,255,255,0.8);
+    }
+
+    header h1 {
+      color: #ff6600;
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      color: #333;
+      max-width: 800px;
+      margin: 0 auto;
+      line-height: 1.8;
+    }
+
+    .festival-section {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+      padding: 40px 20px;
+    }
+
+    .festival-card {
+      background: rgba(255,255,255,0.9);
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      padding: 20px;
+      text-align: center;
+      position: relative;
+      transition: transform 0.3s ease;
+    }
+
+    .festival-card:hover {
+      transform: scale(1.03);
+    }
+
+    .festival-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 15px;
+    }
+
+    .festival-card h3 {
+      color: #0b3d02;
+      margin-bottom: 10px;
+      font-size: 1.4rem;
+    }
+
+    .festival-card p {
+      color: #333;
+      font-size: 1rem;
+      line-height: 1.5;
+      margin-bottom: 35px;
+    }
+
+    /* Read More Button */
+    .read-btn {
+      position: absolute;
+      bottom: 15px;
+      right: 15px;
+      background-color: #ff6600;
+      color: white;
+      border: none;
+      padding: 8px 14px;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .read-btn:hover {
+      background-color: #cc5200;
+    }
+
+    .listen-btn {
+      display: block;
+      margin: 20px auto;
+      background-color: #138808;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .listen-btn:hover {
+      background-color: #0a5a05;
+    }
+
+    footer {
+      background-color: rgba(0,0,0,0.85);
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+
+    @media (max-width: 480px) {
+      header h1 { font-size: 2rem; }
+      .festival-card img { height: 180px; }
+      .read-btn { bottom: 10px; right: 10px; padding: 6px 12px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <div class="navbar">
+      <a href="east.html">🏠 Home</a>
+      <a href="east_cuisines.html">Cuisines</a>
+      <a href="east_festivals.html">Festivals</a>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <header>
+    <h1>Festivals of East India 🎉</h1>
+    <p id="aboutFestivals">
+      Eastern India celebrates its vibrant culture with unique festivals full of colors, devotion, and traditions. From Durga Puja in Bengal to Chhath Puja in Bihar, these festivals unite communities in joy and reverence.
+    </p>
+    <button class="listen-btn" onclick="readFestivals()">🔊 Listen About Festivals</button>
+  </header>
+
+  <!-- Festival Section -->
+  <section class="festival-section">
+    <div class="festival-card">
+      <img src="durga_puja.webp" alt="Durga Puja">
+      <h3>Durga Puja</h3>
+      <p>The grand festival of West Bengal, celebrating Goddess Durga’s victory over Mahishasura, with elaborate decorations, pandals, and cultural programs.</p>
+      <button class="read-btn" onclick="alert('Durga Puja is celebrated with beautifully decorated pandals, idols of Goddess Durga, cultural performances, and traditional Bengali food. It marks the victory of good over evil.')">Read More</button>
+    </div>
+
+    <div class="festival-card">
+      <img src="chhath_puja.jpg" alt="Chhath Puja">
+      <h3>Chhath Puja</h3>
+      <p>A Bihar festival dedicated to the Sun God, involving fasting, holy baths, and offering prayers at riverbanks at sunrise and sunset.</p>
+      <button class="read-btn" onclick="alert('Chhath Puja involves devotees standing in water and offering prayers to the Sun God at sunrise and sunset. Traditional rituals include fasting and offering fruits and sweets.')">Read More</button>
+    </div>
+
+    <div class="festival-card">
+      <img src="bihu.jpg" alt="Bihu">
+      <h3>Bihu</h3>
+      <p>An Assamese festival marking the arrival of spring, celebrated with dance, music, and feasting on traditional delicacies.</p>
+      <button class="read-btn" onclick="alert('Bihu celebrates the Assamese New Year and the farming season. People perform Bihu dance, sing folk songs, and enjoy traditional foods like pitha and larus.')">Read More</button>
+    </div>
+
+    <div class="festival-card">
+      <img src="magh_bihu.jpg" alt="Magh Bihu">
+      <h3>Magh Bihu</h3>
+      <p>A harvest festival in Assam celebrated with bonfires, feasting, and traditional games at the end of the harvesting season.</p>
+      <button class="read-btn" onclick="alert('Magh Bihu, also called Bhogali Bihu, marks the end of harvesting season. People light bonfires, enjoy feasts with pitha and rice beer, and play traditional games.')">Read More</button>
+    </div>
+
+    <div class="festival-card">
+      <img src="pahela_baisakh.jpg" alt="Pahela Baisakh">
+      <h3>Pohela Boishakh</h3>
+      <p>The Bengali New Year, celebrated in West Bengal and Bangladesh with fairs, cultural programs, and traditional food.</p>
+      <button class="read-btn" onclick="alert('Pohela Boishakh marks the Bengali New Year. People wear traditional clothes, visit fairs, exchange greetings, and enjoy Bengali sweets and delicacies.')">Read More</button>
+    </div>
+
+    <div class="festival-card">
+      <img src="rath_yatra.jpg" alt="Rath Yatra">
+      <h3>Rath Yatra</h3>
+      <p>A grand chariot festival of Lord Jagannath in Puri, Odisha, attracting thousands of devotees and tourists every year.</p>
+      <button class="read-btn" onclick="alert('Rath Yatra involves pulling giant chariots of Lord Jagannath, Balabhadra, and Subhadra through the streets of Puri. It is a major religious event in Odisha.')">Read More</button>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 Discover East India | All Rights Reserved
+  </footer>
+
+  <script>
+    // Text-to-speech
+    function readFestivals() {
+      const text = document.getElementById('aboutFestivals').textContent;
+      const speech = new SpeechSynthesisUtterance(text);
+      speech.lang = 'en-IN';
+      speech.rate = 1;
+      speech.pitch = 1;
+      speechSynthesis.cancel();
+      speechSynthesis.speak(speech);
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>South Indian Festivals</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: linear-gradient(to bottom, #ff9933, #ffffff, #138808);
+      color: #222;
+    }
+
+    /* Navbar */
+    nav {
+      width: 100%;
+      background: #0b3d02;
+      padding: 10px 0;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+    .navbar {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 30px;
+    }
+    .navbar a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem;
+      padding: 8px 16px;
+      border-radius: 6px;
+      transition: background 0.3s ease;
+    }
+    .navbar a:hover {
+      background: #ff6600;
+    }
+
+    header {
+      text-align: center;
+      padding: 40px 20px;
+      background: rgba(255,255,255,0.8);
+    }
+
+    header h1 {
+      color: #ff6600;
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      color: #333;
+      max-width: 800px;
+      margin: 0 auto;
+      line-height: 1.8;
+    }
+
+    .festival-section {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+      padding: 40px 20px;
+    }
+
+    .festival-card {
+      background: rgba(255,255,255,0.9);
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      padding: 20px;
+      text-align: center;
+      position: relative;
+      transition: transform 0.3s ease;
+    }
+
+    .festival-card:hover {
+      transform: scale(1.03);
+    }
+
+    .festival-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 15px;
+    }
+
+    .festival-card h3 {
+      color: #0b3d02;
+      margin-bottom: 10px;
+      font-size: 1.4rem;
+    }
+
+    .festival-card p {
+      color: #333;
+      font-size: 1rem;
+      line-height: 1.5;
+      margin-bottom: 35px;
+    }
+
+    /* Read More Button */
+    .read-btn {
+      position: absolute;
+      bottom: 15px;
+      right: 15px;
+      background-color: #ff6600;
+      color: white;
+      border: none;
+      padding: 8px 14px;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .read-btn:hover {
+      background-color: #cc5200;
+    }
+
+    .listen-btn {
+      display: block;
+      margin: 20px auto;
+      background-color: #138808;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .listen-btn:hover {
+      background-color: #0a5a05;
+    }
+
+    footer {
+      background-color: rgba(0,0,0,0.85);
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+
+    @media (max-width: 480px) {
+      header h1 { font-size: 2rem; }
+      .festival-card img { height: 180px; }
+      .read-btn { bottom: 10px; right: 10px; padding: 6px 12px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <div class="navbar">
+      <a href="south_india.html">🏠 Home</a>
+      <a href="south_cuisines.html">Cuisines</a>
+      <a href="south_festivals.html">Festivals</a>
+      <a href="south_tourism.html">Tourist Spots</a>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <header>
+    <h1>Festivals of South India 🎊</h1>
+    <p id="aboutFestivals">
+      South India is a land of spirituality, culture, and celebration. Its festivals are deeply rooted in harvests, devotion, and tradition — from the colorful flower carpets of Onam to the vibrant rituals of Pongal and the spiritual aura of Thaipusam.
+    </p>
+    <button class="listen-btn" onclick="readFestivals()">🔊 Listen About Festivals</button>
+  </header>
+
+  <!-- Festival Section -->
+  <section class="festival-section">
+
+    <div class="festival-card">
+      <img src="pongal.webp" alt="Pongal">
+      <h3>Pongal</h3>
+      <p>The Tamil harvest festival thanking the Sun God. Families prepare the dish ‘Pongal’ and celebrate prosperity and abundance.</p>
+      <button class="read-btn" onclick="alert('Pongal is a four-day Tamil harvest festival celebrated in January. The first day is Bhogi, the second is Surya Pongal, dedicated to the Sun God, followed by Mattu Pongal and Kaanum Pongal. The dish Pongal made with rice and jaggery is cooked in every home.')">Read More</button>
+    </div>
+
+    <div class="festival-card">
+      <img src="onam.webp" alt="Onam">
+      <h3>Onam</h3>
+      <p>Kerala’s most famous festival celebrating the return of King Mahabali, with floral carpets, boat races, and the grand Onam Sadhya feast.</p>
+      <button class="read-btn" onclick="alert('Onam is a 10-day festival in Kerala marking the homecoming of King Mahabali. People decorate homes with pookalam (flower designs), wear traditional attire, enjoy Vallamkali (boat races), and feast on Onam Sadhya with 26 dishes served on banana leaves.')">Read More</button>
+    </div>
+
+    <div class="festival-card">
+      <img src="ugadi.webp" alt="Ugadi">
+      <h3>Ugadi</h3>
+      <p>The Telugu and Kannada New Year festival that marks the beginning of a new era, celebrated with sweets, prayers, and hope.</p>
+      <button class="read-btn" onclick="alert('Ugadi marks the New Year for Andhra Pradesh, Telangana, and Karnataka. People decorate their homes with mango leaves, prepare Ugadi Pachadi made with sweet, sour, and bitter flavors symbolizing life’s mix of emotions.')">Read More</button>
+    </div>
+
+    <div class="festival-card">
+      <img src="vishu.webp" alt="Vishu">
+      <h3>Vishu</h3>
+      <p>Kerala’s New Year festival celebrating prosperity, marked by Vishu Kani — the first sight of auspicious items in the morning.</p>
+      <button class="read-btn" onclick="alert('Vishu is celebrated in Kerala as the Malayalam New Year in April. People view Vishu Kani (auspicious arrangement), burst firecrackers, and prepare Vishu Sadhya to symbolize prosperity and luck for the year ahead.')">Read More</button>
+    </div>
+
+    <div class="festival-card">
+      <img src="thaipusam.webp" alt="Thaipusam">
+      <h3>Thaipusam</h3>
+      <p>A Tamil festival dedicated to Lord Murugan, observed with devotion and processions, often marked by acts of penance.</p>
+      <button class="read-btn" onclick="alert('Thaipusam is dedicated to Lord Murugan, the Hindu god of war. Devotees carry Kavadis and undertake vows as an expression of devotion and penance, especially in Tamil Nadu and Malaysia.')">Read More</button>
+    </div>
+
+    <div class="festival-card">
+      <img src="mahamaham.webp" alt="Mahamaham">
+      <h3>Mahamaham</h3>
+      <p>Held once every 12 years in Kumbakonam, Tamil Nadu, it is a sacred bathing festival attracting millions of devotees.</p>
+      <button class="read-btn" onclick="alert('Mahamaham is celebrated every 12 years in Kumbakonam, Tamil Nadu, when devotees take a holy dip in the Mahamaham tank believed to cleanse sins. The festival sees grand processions of deities and rituals over 10 days.')">Read More</button>
+    </div>
+
+  </section>
+
+  <footer>
+    &copy; 2025 Discover South India | All Rights Reserved
+  </footer>
+
+  <script>
+    // Text-to-speech
+    function readFestivals() {
+      const text = document.getElementById('aboutFestivals').textContent;
+      const speech = new SpeechSynthesisUtterance(text);
+      speech.lang = 'en-IN';
+      speech.rate = 1;
+      speech.pitch = 1;
+      speechSynthesis.cancel();
+      speechSynthesis.speak(speech);
+    }
+  </script>
+
+</body>
+</html>

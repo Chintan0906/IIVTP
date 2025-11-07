@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About West India</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: linear-gradient(to bottom, #ff9933 0%, #ffffff 50%, #138808 100%);
+      color: #222;
+    }
+
+    /* Navbar */
+    nav {
+      width: 100%;
+      background: #0b3d02;
+      padding: 8px 0;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 30px;
+    }
+
+    .navbar a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 1rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      transition: color 0.2s;
+      padding: 6px 12px;
+      border-radius: 6px;
+    }
+
+    .navbar a:hover {
+      background: #ff6600;
+      color: #fff;
+    }
+
+    /* Slideshow */
+    .slideshow-container {
+      position: relative;
+      max-width: 100%;
+      height: 380px;
+      margin: auto;
+      overflow: hidden;
+      background: #fff;
+    }
+
+    .slides {
+      display: none;
+      width: 100%;
+      height: 380px;
+      object-fit: cover;
+    }
+
+    .fade {
+      animation: fade 1.5s ease-in-out;
+    }
+
+    @keyframes fade {
+      from {opacity: .4}
+      to {opacity: 1}
+    }
+
+    .dot-container {
+      text-align: center;
+      position: relative;
+      top: -35px;
+    }
+
+    .dot {
+      height: 12px;
+      width: 12px;
+      margin: 0 3px;
+      background-color: #bbb;
+      border-radius: 50%;
+      display: inline-block;
+      transition: background-color 0.6s ease;
+      cursor: pointer;
+    }
+
+    .active {
+      background-color: #717171;
+    }
+
+    /* Prev/Next Buttons */
+    .prev, .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      width: auto;
+      padding: 12px;
+      color: white;
+      font-weight: bold;
+      font-size: 20px;
+      border-radius: 0 3px 3px 0;
+      user-select: none;
+      background-color: rgba(0,0,0,0.4);
+      transform: translateY(-50%);
+      transition: background-color 0.3s;
+    }
+
+    .next {
+      right: 0;
+      border-radius: 3px 0 0 3px;
+    }
+
+    .prev:hover, .next:hover {
+      background-color: rgba(0,0,0,0.7);
+    }
+
+    header {
+      padding: 40px 20px;
+      text-align: center;
+      background: rgba(255, 255, 255, 0.8);
+      color: #000;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+      color: #ff6600;
+    }
+
+    h2 {
+      margin-top: 30px;
+      font-size: 2rem;
+      color: #0b3d02;
+    }
+
+    p {
+      max-width: 900px;
+      margin: 20px auto;
+      font-size: 1.2rem;
+      line-height: 1.8;
+      color: #333;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 20px auto;
+      max-width: 600px;
+    }
+
+    ul li {
+      margin: 8px 0;
+    }
+
+    ul li button {
+      width: 100%;
+      background-color: rgba(255, 255, 255, 0.8);
+      border: none;
+      border-radius: 8px;
+      padding: 12px;
+      font-size: 1.1rem;
+      font-family: 'Montserrat', sans-serif;
+      cursor: pointer;
+      transition: background 0.3s, transform 0.2s;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    ul li button:hover {
+      background-color: #ffcc80;
+      transform: scale(1.02);
+    }
+
+    a img {
+      max-width: 90%;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      margin-top: 20px;
+      transition: transform 0.3s ease;
+    }
+
+    a img:hover {
+      transform: scale(1.05);
+    }
+
+    .content {
+      padding: 30px 20px;
+      text-align: center;
+    }
+
+    button.listen-btn {
+      padding: 10px 20px;
+      font-size: 1rem;
+      margin-top: 10px;
+      border: none;
+      border-radius: 8px;
+      background-color: #138808;
+      color: white;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button.listen-btn:hover {
+      background-color: #0a5a05;
+    }
+
+    footer {
+      background-color: rgba(0, 0, 0, 0.8);
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 50px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar Start -->
+  <nav>
+    <div class="navbar">
+      <a href="west_cuisines.html">Cuisines</a>
+      <a href="west_festivals.html">Festivals</a>
+      <a href="#tourist-spots">Tourist Spots</a>
+    </div>
+  </nav>
+  <!-- Navbar End -->
+
+  <!-- Slideshow Start -->
+  <div class="slideshow-container">
+    <img class="slides fade" src="west1.jpg" alt="West India 1">
+    <img class="slides fade" src="west2.jpg" alt="West India 2">
+    <img class="slides fade" src="west3.jpg" alt="West India 3">
+
+    <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+    <a class="next" onclick="changeSlide(1)">&#10095;</a>
+  </div>
+
+  <div class="dot-container">
+    <span class="dot" onclick="goToSlide(1)"></span>
+    <span class="dot" onclick="goToSlide(2)"></span>
+    <span class="dot" onclick="goToSlide(3)"></span>
+  </div>
+  <!-- Slideshow End -->
+
+  <header>
+    <h1>Discover West India</h1>
+    <h2>About West India</h2>
+    <p id="aboutWestIndia">
+      West India is a vibrant region known for its diverse culture, rich history, and stunning landscapes. It includes states like Maharashtra, Gujarat, Rajasthan, Goa, and Madhya Pradesh. From the bustling city of Mumbai to the serene beaches of Goa, West India offers a unique blend of urban and rural experiences. The region is famous for its festivals, cuisine, and historical landmarks such as the Ajanta and Ellora Caves.
+    </p>
+    <button class="listen-btn" onclick="readWestIndia()">🔊 Listen About West India</button>
+
+    <h2>States in West India</h2>
+    <ul>
+      <li><button onclick="location.href='Maharashtra.html'">Maharashtra</button></li>
+      <li><button onclick="location.href='Gujarat.html'">Gujarat</button></li>
+      <li><button onclick="location.href='Rajasthan.html'">Rajasthan</button></li>
+      <li><button onclick="location.href='Goa.html'">Goa</button></li>
+      <li><button onclick="location.href='Madhya_Pradesh.html'">Madhya Pradesh</button></li>
+    </ul>
+
+    <h2>Map of West India</h2>
+    <a href="west_india1.jpg" target="_blank">
+      <img src="west_india1.jpg" alt="West India Map">
+    </a>
+  </header>
+
+  <div class="content" id="tourist-spots">
+    <h2>Famous Tourist Spots</h2>
+    <p>
+      Explore iconic landmarks like Gateway of India (Mumbai), Gir National Park (Gujarat), Jaipur Palace (Rajasthan), Dudhsagar Falls (Goa), and Khajuraho Temples (Madhya Pradesh).
+    </p>
+  </div>
+
+  <footer>
+    &copy; 2025 Discover West India. All Rights Reserved.
+  </footer>
+
+  <script>
+    // Text-to-speech
+    function readWestIndia() {
+      const text = document.getElementById('aboutWestIndia').textContent;
+      const speech = new SpeechSynthesisUtterance(text);
+      speech.lang = 'en-IN';
+      speech.rate = 1;
+      speech.pitch = 1;
+      speechSynthesis.cancel();
+      speechSynthesis.speak(speech);
+    }
+
+    // Slideshow Script
+    let slideIndex = 1;
+    let slideTimer;
+
+    function showSlides(n) {
+      const slides = document.getElementsByClassName("slides");
+      const dots = document.getElementsByClassName("dot");
+      if (n > slides.length) { slideIndex = 1 }
+      if (n < 1) { slideIndex = slides.length }
+
+      for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      for (let i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+
+      slides[slideIndex - 1].style.display = "block";
+      dots[slideIndex - 1].className += " active";
+    }
+
+    function changeSlide(n) {
+      clearTimeout(slideTimer);
+      showSlides(slideIndex += n);
+      autoSlide();
+    }
+
+    function goToSlide(n) {
+      clearTimeout(slideTimer);
+      showSlides(slideIndex = n);
+      autoSlide();
+    }
+
+    function autoSlide() {
+      slideTimer = setTimeout(() => {
+        showSlides(slideIndex += 1);
+        autoSlide();
+      }, 3000);
+    }
+
+    showSlides(slideIndex);
+    autoSlide();
+  </script>
+
+</body>
+</html>

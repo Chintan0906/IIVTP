@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>West Indian Cuisines</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: linear-gradient(to bottom, #ff9933 0%, #ffffff 50%, #138808 100%);
+      color: #222;
+    }
+
+    nav {
+      width: 100%;
+      background: #0b3d02;
+      padding: 10px 0;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .navbar a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 8px 14px;
+      border-radius: 6px;
+      transition: background 0.3s;
+    }
+
+    .navbar a:hover {
+      background: #ff6600;
+    }
+
+    header {
+      text-align: center;
+      padding: 40px 20px;
+      background: rgba(255, 255, 255, 0.8);
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      color: #ff6600;
+    }
+
+    h2 {
+      font-size: 1.8rem;
+      margin-top: 20px;
+      color: #0b3d02;
+    }
+
+    p {
+      max-width: 900px;
+      margin: 15px auto;
+      line-height: 1.7;
+      font-size: 1.1rem;
+      color: #333;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .dish {
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .dish:hover {
+      transform: scale(1.03);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+    }
+
+    .dish img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    .dish h3 {
+      margin-top: 15px;
+      color: #ff6600;
+    }
+
+    .dish p {
+      font-size: 0.95rem;
+      color: #333;
+      margin-top: 8px;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 12px;
+      padding: 10px 20px;
+      background: #0b3d02;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: 0.3s ease;
+      text-decoration: none;
+    }
+
+    .btn:hover {
+      background: #ff6600;
+      transform: scale(1.05);
+    }
+
+    footer {
+      background: rgba(0, 0, 0, 0.85);
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 2rem;
+      }
+      p {
+        font-size: 1rem;
+      }
+      .dish img {
+        height: 160px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="navbar">
+      <a href="west_india.html">Home</a>
+      <a href="west_cuisines.html">Cuisines</a>
+      <a href="west_festivals.html">Festivals</a>
+      <a href="west_tourism.html">Tourist Spots</a>
+    </div>
+  </nav>
+
+  <header>
+    <h1>Flavors of West India</h1>
+    <p>
+      West Indian cuisine is famous for its rich diversity, bold spices, and coastal as well as vegetarian specialties. The region includes dishes from Maharashtra, Gujarat, Rajasthan, Goa, and Madhya Pradesh, blending sweet, spicy, tangy, and savory flavors.
+    </p>
+  </header>
+
+  <section class="gallery">
+    <div class="dish">
+      <img src="vada_pav.jpeg" alt="Vada Pav">
+      <h3>Vada Pav</h3>
+      <p>Maharashtra’s iconic street food — a spicy potato fritter sandwiched in a soft bun, served with chutneys.</p>
+      <a class="btn">View Recipe</a>
+    </div>
+
+    <div class="dish">
+      <img src="dhokla.jpeg" alt="Dhokla">
+      <h3>Dhokla</h3>
+      <p>A steamed savory cake made from fermented chickpea flour, lightly spiced and often garnished with mustard seeds — a Gujarat specialty.</p>
+      <a class="btn">View Recipe</a>
+    </div>
+
+    <div class="dish">
+      <img src="dal_baati_churma.jpeg" alt="Dal Baati Churma">
+      <h3>Dal Baati Churma</h3>
+      <p>Rajasthan’s classic dish — baked wheat balls served with spiced lentils and sweetened crushed wheat.</p>
+      <a class="btn">View Recipe</a>
+    </div>
+
+    <div class="dish">
+      <img src="goan_fish_curry.jpeg" alt="Goan Fish Curry">
+      <h3>Goan Fish Curry</h3>
+      <p>A tangy and spicy coconut-based fish curry with tamarind, typical of Goa’s coastal cuisine.</p>
+      <a class="btn">View Recipe</a>
+    </div>
+
+    <div class="dish">
+      <img src="bhutte_ka_kesari.jpeg" alt="Bhutte Ka Kees">
+      <h3>Bhutte Ka Kees</h3>
+      <p>Madhya Pradesh’s specialty — grated corn cooked with spices and milk, served as a savory-sweet dish.</p>
+      <a class="btn">View Recipe</a>
+    </div>
+
+    <div class="dish">
+      <img src="poha.jpeg" alt="Poha">
+      <h3>Poha</h3>
+      <p>A light breakfast dish made from flattened rice, tempered with mustard seeds, curry leaves, and peanuts — popular in Maharashtra.</p>
+      <a class="btn">View Recipe</a>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 Discover West India. All Rights Reserved.
+  </footer>
+</body>
+</html>

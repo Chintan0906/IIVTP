@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>North Indian Festivals</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: linear-gradient(to bottom, #ff9933, #ffffff, #138808);
+      color: #222;
+    }
+
+    /* Navbar */
+    nav {
+      width: 100%;
+      background: #0b3d02;
+      padding: 10px 0;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+    .navbar {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 30px;
+    }
+    .navbar a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem;
+      padding: 8px 16px;
+      border-radius: 6px;
+      transition: background 0.3s ease;
+    }
+    .navbar a:hover {
+      background: #ff6600;
+    }
+
+    header {
+      text-align: center;
+      padding: 40px 20px;
+      background: rgba(255,255,255,0.8);
+    }
+
+    header h1 {
+      color: #ff6600;
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      color: #333;
+      max-width: 800px;
+      margin: 0 auto;
+      line-height: 1.8;
+    }
+
+    .festival-section {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+      padding: 40px 20px;
+    }
+
+    .festival-card {
+      background: rgba(255,255,255,0.9);
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      padding: 20px;
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .festival-card:hover {
+      transform: scale(1.03);
+    }
+
+    .festival-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 15px;
+    }
+
+    .festival-card h3 {
+      color: #0b3d02;
+      margin-bottom: 10px;
+      font-size: 1.4rem;
+    }
+
+    .festival-card p {
+      color: #333;
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+
+    .listen-btn {
+      display: block;
+      margin: 20px auto;
+      background-color: #138808;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .listen-btn:hover {
+      background-color: #0a5a05;
+    }
+
+    footer {
+      background-color: rgba(0,0,0,0.85);
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+
+    @media (max-width: 480px) {
+      header h1 { font-size: 2rem; }
+      .festival-card img { height: 180px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <div class="navbar">
+      <a href="north_india.html">🏠 Home</a>
+      <a href="north_cuisines.html">Cuisines</a>
+      <a href="north_festivals.html">Festivals</a>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <header>
+    <h1>Festivals of North India 🎉</h1>
+    <p id="aboutFestivals">
+      North India celebrates life with vibrant colors, music, and traditions. From the lights of Diwali to the colors of Holi, these festivals unite people through joy, devotion, and cultural pride.
+    </p>
+    <button class="listen-btn" onclick="readFestivals()">🔊 Listen About Festivals</button>
+  </header>
+
+  <!-- Festival Section -->
+  <section class="festival-section">
+    <div class="festival-card">
+      <img src="diwali.jpg" alt="Diwali">
+      <h3>Diwali</h3>
+      <p>The festival of lights, symbolizing the victory of good over evil. Homes are decorated with lamps and sweets are shared among families.</p>
+    </div>
+
+    <div class="festival-card">
+      <img src="holi.jpg" alt="Holi">
+      <h3>Holi</h3>
+      <p>The festival of colors, celebrated with enthusiasm, music, and splashes of colored powder to mark the arrival of spring.</p>
+    </div>
+
+    <div class="festival-card">
+      <img src="baisakhi.jpg" alt="Baisakhi">
+      <h3>Baisakhi</h3>
+      <p>A harvest festival celebrated in Punjab marking the start of the new harvest season, filled with dancing and feasting.</p>
+    </div>
+
+    <div class="festival-card">
+      <img src="lohri.jpg" alt="Lohri">
+      <h3>Lohri</h3>
+      <p>Celebrated in winter to mark the end of cold days. People gather around bonfires, sing songs, and enjoy sweets made of sesame and jaggery.</p>
+    </div>
+
+    <div class="festival-card">
+      <img src="eid.jpg" alt="Eid">
+      <h3>Eid</h3>
+      <p>Muslim festival celebrated with prayers, charity, and delicious feasts after a month of fasting during Ramadan.</p>
+    </div>
+
+    <div class="festival-card">
+      <img src="navratri.jpg" alt="Navratri">
+      <h3>Navratri & Dussehra</h3>
+      <p>Dedicated to Goddess Durga, celebrated with fasting, garba dances, and the symbolic victory of Lord Rama over Ravana.</p>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 Discover North India | All Rights Reserved
+  </footer>
+
+  <script>
+    // Text-to-speech
+    function readFestivals() {
+      const text = document.getElementById('aboutFestivals').textContent;
+      const speech = new SpeechSynthesisUtterance(text);
+      speech.lang = 'en-IN';
+      speech.rate = 1;
+      speech.pitch = 1;
+      speechSynthesis.cancel();
+      speechSynthesis.speak(speech);
+    }
+  </script>
+
+</body>
+</html>

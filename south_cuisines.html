@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>South Indian Cuisines</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: linear-gradient(to bottom, #ff9933 0%, #ffffff 50%, #138808 100%);
+      color: #222;
+    }
+
+    nav {
+      width: 100%;
+      background: #0b3d02;
+      padding: 10px 0;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .navbar a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 8px 14px;
+      border-radius: 6px;
+      transition: background 0.3s;
+    }
+
+    .navbar a:hover {
+      background: #ff6600;
+    }
+
+    header {
+      text-align: center;
+      padding: 40px 20px;
+      background: rgba(255, 255, 255, 0.8);
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      color: #ff6600;
+    }
+
+    h2 {
+      font-size: 1.8rem;
+      margin-top: 20px;
+      color: #0b3d02;
+    }
+
+    p {
+      max-width: 900px;
+      margin: 15px auto;
+      line-height: 1.7;
+      font-size: 1.1rem;
+      color: #333;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .dish {
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .dish:hover {
+      transform: scale(1.03);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+    }
+
+    .dish img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    .dish h3 {
+      margin-top: 15px;
+      color: #ff6600;
+    }
+
+    .dish p {
+      font-size: 0.95rem;
+      color: #333;
+      margin-top: 8px;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 12px;
+      padding: 10px 20px;
+      background: #0b3d02;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: 0.3s ease;
+      text-decoration: none;
+    }
+
+    .btn:hover {
+      background: #ff6600;
+      transform: scale(1.05);
+    }
+
+    footer {
+      background: rgba(0, 0, 0, 0.85);
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 2rem;
+      }
+      p {
+        font-size: 1rem;
+      }
+      .dish img {
+        height: 160px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="navbar">
+      <a href="south_india.html">Home</a>
+      <a href="south_cuisines.html">Cuisines</a>
+      <a href="south_festivals.html">Festivals</a>
+      <a href="south_tourism.html">Tourist Spots</a>
+    </div>
+  </nav>
+
+  <header>
+    <h1>Flavors of South India</h1>
+    <p>
+      South Indian cuisine is renowned for its rich use of spices, aromatic flavors, and unique textures. The region’s dishes vary from state to state — from Tamil Nadu’s crispy dosas to Kerala’s coconut-based curries and Andhra’s spicy biryanis.
+    </p>
+  </header>
+
+  <section class="gallery">
+    <div class="dish">
+      <img src="dosa.jpg" alt="Dosa">
+      <h3>Masala Dosa</h3>
+      <p>A crispy crepe made from fermented rice and lentil batter, stuffed with spiced potatoes, served with chutney and sambhar.</p>
+      <a href="dosa_recipe.html" class="btn">View Recipe</a>
+    </div>
+
+    <div class="dish">
+      <img src="idli.jpg" alt="Idli Sambhar">
+      <h3>Idli Sambhar</h3>
+      <p>Soft, fluffy steamed rice cakes paired with tangy sambhar and coconut chutney — a staple South Indian breakfast.</p>
+      <a href="idli_recipe.html" class="btn">View Recipe</a>
+    </div>
+
+    <div class="dish">
+      <img src="appam.jpg" alt="Appam and Stew">
+      <h3>Appam with Stew</h3>
+      <p>Kerala’s signature dish — bowl-shaped pancakes made from fermented rice batter, served with vegetable or chicken stew.</p>
+      <a href="appam_recipe.html" class="btn">View Recipe</a>
+    </div>
+
+    <div class="dish">
+      <img src="biryani.jpg" alt="Hyderabadi Biryani">
+      <h3>Hyderabadi Biryani</h3>
+      <p>A royal delicacy made with fragrant basmati rice, saffron, and spiced meat, layered to perfection — a true South Indian gem.</p>
+      <a href="biryani_recipe.html" class="btn">View Recipe</a>
+    </div>
+
+    <div class="dish">
+      <img src="chettinad.jpg" alt="Chettinad Chicken Curry">
+      <h3>Chettinad Chicken Curry</h3>
+      <p>Originating from Tamil Nadu, this fiery dish combines roasted spices, coconut, and tender chicken for a bold flavor.</p>
+      <a href="chettinad_recipe.html" class="btn">View Recipe</a>
+    </div>
+
+    <div class="dish">
+      <img src="puttu.jpg" alt="Puttu and Kadala Curry">
+      <h3>Puttu and Kadala Curry</h3>
+      <p>A popular Kerala breakfast made with steamed rice flour cylinders and black chickpea curry — hearty and wholesome.</p>
+      <a href="puttu_recipe.html" class="btn">View Recipe</a>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 Discover South India. All Rights Reserved.
+  </footer>
+</body>
+</html>
